@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<meta content="utf-8" http-equiv="encoding">
+	<title>Form VueJS</title>
+</head>
+<body>
+	<form
+ 	 id="app"
+ 	 @submit="checkForm"
+
+	>
+
+  <p v-if="errors.length >= 1">
+    <b>Please correct the following error(s):</b>
+    <ul>
+      <li v-for="error in errors">{{ error }}</li>
+    </ul>
+  </p>
+
+  <p>
+    <label for="name">Name *</label>
+    <input
+      id="name"
+      v-model="name"
+      type="text"
+      name="name"
+    >
+  </p>
+
+  <p>
+    <label for="email">Email *</label>
+    <input
+      id="email"
+      v-model="email"
+      type="email"
+      name="email"
+    >
+  </p>
+
+  <p>
+  	<label for="mobile">Mobile</label>
+  	<input 
+  		type="number"
+  	 	name="mobile"
+  	>
+  </p>
+
+  <p>
+  	<label>Address</label>
+  	<input 
+  		type="text"
+  		name="address"
+  	>
+  </p>
+
+  <p>
+  	<label>Password *</label>
+  	<input 
+  		id="pass"
+  		v-model="pass" 
+  		type="password"
+  		name="pass"
+  	>
+  </p>
+
+  <p>
+  	<label>Re-enter password *</label>
+  	<input 
+  		id="rpass"
+  		v-model="rpass" 
+  		type="password"
+  		name="rpass"
+  	>
+  </p>
+
+  <p>
+    <input
+      type="submit"
+      value="Submit"
+    >
+  </p>
+
+</form>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="vue.js"></script>
+</body>
+</html>
